@@ -34,7 +34,8 @@ def predict_csv():
         return jsonify({'error': 'No file selected for uploading'}), 400
     if file:
         filename = secure_filename(file.filename)
-        filepath = os.path.join('C:\\Users\\icono\\AppData\\Local\\Temp', filename)  # change 'YourUsername' to your actual username
+        
+        filepath = os.path.join('C:\\Users\\icono\\OneDrive\\Desktop', filename)  # change 'YourUsername' to your actual username
         file.save(filepath)
         # Load the CSV data
         data = pd.read_csv(filepath)
