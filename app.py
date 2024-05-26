@@ -24,25 +24,25 @@ def predict():
 
 
 
-@app.route('/predict_csv', methods=['POST'])
-def predict_csv():
-    # Check if a file was posted
-    if 'file' not in request.files:
-        return jsonify({'error': 'No file part in the request'}), 400
-    file = request.files['file']
-    if file.filename == '':
-        return jsonify({'error': 'No file selected for uploading'}), 400
-    if file:
-        filename = secure_filename(file.filename)
-        
-        filepath = os.path.join('C:\\Users\\icono\\OneDrive\\Desktop', filename)  # change 'YourUsername' to your actual username
-        file.save(filepath)
-        # Load the CSV data
-        data = pd.read_csv(filepath)
-        # Make prediction
-        prediction = model.predict(data).tolist()
-        # Return results
-        return jsonify({'prediction': prediction})
+#@app.route('/predict_csv', methods=['POST'])
+#def predict_csv():
+#    # Check if a file was posted
+#    if 'file' not in request.files:
+#        return jsonify({'error': 'No file part in the request'}), 400
+#    file = request.files['file']
+#    if file.filename == '':
+#        return jsonify({'error': 'No file selected for uploading'}), 400
+#    if file:
+#        filename = secure_filename(file.filename)
+#        
+#        filepath = os.path.join('C:\\Users\\icono\\OneDrive\\Desktop', filename)  # change 'YourUsername' to your actual username
+#        file.save(filepath)
+#        # Load the CSV data
+#        data = pd.read_csv(filepath)
+#       # Make prediction
+#       prediction = model.predict(data).tolist()
+#        # Return results
+#        return jsonify({'prediction': prediction})
 
 if __name__ == '__main__':
     app.run(port=5000, debug=True)
