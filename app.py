@@ -5,6 +5,7 @@ from werkzeug.utils import secure_filename
 import numpy as np
 import os
 
+print(pickle.format_version)
 # Load your trained model
 with open('model.pkl', 'rb') as file:
     model = pickle.load(file)
