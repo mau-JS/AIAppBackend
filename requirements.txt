@@ -103,6 +103,4 @@ pillow==10.3.0
 platformdirs==4.2.1
 preshed==3.0.9
 prometheus_client==0.20.0
-pickle==4.0
-werkzeug==2.1.1
 
