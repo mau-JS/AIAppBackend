@@ -1,19 +1,20 @@
 from flask import Flask, request, jsonify
-#import pickle
-#import pandas as pd
+import pickle
+import pandas as pd
 #from werkzeug.utils import secure_filename
-#import numpy as np
+import numpy as np
 #import os
-#a
-app = Flask(__name__)
 
-@app.route('/')
+
+#app = Flask(__name__)
+
+""" @app.route('/')
 def hello_world():
-    return 'Hello, World!'
+    return 'Hello, World!' """
 
 
 
-""" # Load your trained model
+ # Load your trained model
 with open('model.pkl', 'rb') as file:
     model = pickle.load(file)
 
@@ -28,7 +29,7 @@ def predict():
     # Make prediction
     prediction = model.predict(features)
     # Return results
-    return jsonify({'prediction': prediction.tolist()}) """
+    return jsonify({'prediction': prediction.tolist()}) 
 
 if __name__ == "__main__":
     app.run(debug=True) 
