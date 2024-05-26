@@ -25,7 +25,7 @@ def predict():
     # Make prediction
     prediction = model.predict(features)
     # Return results
-    return jsonify({'prediction': prediction.tolist()})"""
+    return jsonify({'prediction': prediction.tolist()})
 
 if __name__ == "__main__":
-    app.run(debug=True) 
+    app.run(debug=True)  """
